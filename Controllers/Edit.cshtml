@@ -1,0 +1,49 @@
+﻿@page
+@model ICETASKONE.Controllers.EditModel
+
+<h4>RapMusic</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RapMusic.Id" />
+            <div class="form-group">
+                <label asp-for="RapMusic.Artist" class="control-label"></label>
+                <input asp-for="RapMusic.Artist" class="form-control" />
+                <span asp-validation-for="RapMusic.Artist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RapMusic.Title" class="control-label"></label>
+                <input asp-for="RapMusic.Title" class="form-control" />
+                <span asp-validation-for="RapMusic.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RapMusic.Genre" class="control-label"></label>
+                <input asp-for="RapMusic.Genre" class="form-control" />
+                <span asp-validation-for="RapMusic.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RapMusic.ReleaseYear" class="control-label"></label>
+                <input asp-for="RapMusic.ReleaseYear" class="form-control" />
+                <span asp-validation-for="RapMusic.ReleaseYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RapMusic.Keywords" class="control-label"></label>
+                <input asp-for="RapMusic.Keywords" class="form-control" />
+                <span asp-validation-for="RapMusic.Keywords" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
